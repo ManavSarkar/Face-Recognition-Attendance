@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+<!-- Title -->
+{% block title %} Register {% endblock %}
+
+<!-- Body -->
+{% block body %}
+<h1>Home</h1>
+<p>Welcome to the Register page.</p>
+<div class="d-flex justify-content-center justify-content-evenly">
+  <img
+    class="border border-primary"
+    src="{{url_for('video_feed')}}"
+    alt="dasd"
+    width="400"
+    height="300"
+  />
+
+  <!-- Register form required name, roll, date of birth-->
+
+  <form action="{{url_for('addmember')}}" method="post">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Enter name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="roll">Roll</label>
+      <input
+        type="text"
+        class="form-control"
+        id="roll"
+        name="roll"
+        placeholder="Enter roll"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+      <input
+        type="date"
+        class="form-control"
+        id="dob"
+        name="dob"
+        placeholder="Enter date of birth"
+        required
+      />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

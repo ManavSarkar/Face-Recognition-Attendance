@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+<!-- Title -->
+{% block title %} Login {% endblock %}
+
+<!-- Body -->
+
+{% block body %}
+<h1>Login</h1>
+<p class="text-bg-dark text-center" >Login to your account</p>
+<div class="d-flex justify-content-center justify-content-evenly">
+    <!-- Login form bootstrap with email and password -->
+    <form action="{{url_for('login')}}" method="post">
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Enter email"
+                required
+            />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Enter password"
+                required
+            />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+</div>
+{% endblock %}
